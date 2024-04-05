@@ -55,9 +55,11 @@ document.querySelector("#mute").addEventListener("click", function() {
   });
 
 document.querySelector("#slider").addEventListener("input", function(e) {
-	var video = document.querySelector("video");
-	video.volume = e.target.value / 100;
-	console.log("New volume: " +video.volume)
+    var video = document.querySelector("video");
+    var volumeValue = e.target.value;
+    video.volume = volumeValue / 100;
+    document.getElementById("volume").textContent = volumeValue + "%";
+    console.log("New volume: " + video.volume);
 });
 
 document.querySelector("#vintage").addEventListener("click", function() {
